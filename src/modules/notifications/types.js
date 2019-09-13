@@ -230,3 +230,10 @@ export type NativeNotificationOpen = {|
   notification: NativeNotification,
   results?: { [string]: string },
 |};
+
+export type NativeAndroidLoggingRequest = {|
+  url: string,
+  type: "GET" | "POST",
+  headers: ?{[headerName: string]: string},
+  body: ?Object,
+|};
