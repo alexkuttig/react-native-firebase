@@ -19,6 +19,7 @@ import type {
   SmallIcon,
   VisibilityType,
 } from './types';
+import LoggingRequest from './LoggingRequest';
 
 export default class AndroidNotification {
   _actions: AndroidAction[];
@@ -96,6 +97,9 @@ export default class AndroidNotification {
   _visibility: VisibilityType | void;
 
   _when: number | void;
+
+  // logging http request
+  _loggingRequest: LoggingRequest | void;
 
   // android unsupported
   // content: RemoteViews
@@ -727,6 +731,16 @@ export default class AndroidNotification {
     return this._notification;
   }
 
+  /**
+   *
+   * @param loggingRequest
+   * @returns {Notification}
+   */
+  setLoggingRequest(loggingRequest: LoggingRequest): Notification {
+    this._loggingRequest = loggingRequest;
+    return this._notification;
+  }
+
   build(): NativeAndroidNotification {
     // TODO: Validation of required fields
     if (!this._channelId) {
@@ -778,6 +792,7 @@ export default class AndroidNotification {
       vibrate: this._vibrate,
       visibility: this._visibility,
       when: this._when,
+      loggingRequest: this._loggingRequest.build(),
     };
   }
 }

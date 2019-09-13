@@ -14,6 +14,7 @@ import AndroidChannelGroup from './AndroidChannelGroup';
 import AndroidNotifications from './AndroidNotifications';
 import IOSNotifications from './IOSNotifications';
 import AndroidRemoteInput from './AndroidRemoteInput';
+import LoggingRequest from './LoggingRequest';
 import Notification from './Notification';
 import {
   BadgeIconType,
@@ -342,6 +343,7 @@ export const statics = {
     Priority,
     RemoteInput: AndroidRemoteInput,
     SemanticAction,
+    LoggingRequest: LoggingRequest,
     Visibility,
   },
   Notification,
