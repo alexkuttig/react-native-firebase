@@ -792,7 +792,7 @@ export default class AndroidNotification {
       vibrate: this._vibrate,
       visibility: this._visibility,
       when: this._when,
-      loggingRequest: this._loggingRequest.build(),
+      loggingRequest: this._loggingRequest ? this._loggingRequest.build() : undefined
     };
   }
 }
