@@ -193,6 +193,9 @@ class RNFirebaseFirestoreCollectionReference {
           case "ARRAY_CONTAINS":
             query = query.whereArrayContains(fieldPath, value);
             break;
+          case "IN":
+            query = query.whereIn(fieldPath, (List)value);
+            break;
         }
       } else {
         ReadableArray fieldPathElements = fieldPathMap.getArray("elements");
@@ -219,6 +222,9 @@ class RNFirebaseFirestoreCollectionReference {
             break;
           case "ARRAY_CONTAINS":
             query = query.whereArrayContains(fieldPath, value);
+            break;
+          case "IN":
+            query = query.whereIn(fieldPath, (List)value);
             break;
         }
       }

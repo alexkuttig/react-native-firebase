@@ -124,6 +124,8 @@ queryListenOptions:(NSDictionary *)queryListenOptions {
         query = [query queryWhereField:fieldPath isLessThanOrEqualTo:value];
       } else if ([operator isEqualToString:@"ARRAY_CONTAINS"]) {
         query = [query queryWhereField:fieldPath arrayContains:value];
+      } else if ([operator isEqualToString:@"IN"]) {
+        query = [query queryWhereField:fieldPath in:value];
       }
     } else {
       NSArray *fieldPathElements = fieldPathDictionary[@"elements"];
@@ -140,6 +142,8 @@ queryListenOptions:(NSDictionary *)queryListenOptions {
         query = [query queryWhereFieldPath:fieldPath isLessThanOrEqualTo:value];
       } else if ([operator isEqualToString:@"ARRAY_CONTAINS"]) {
         query = [query queryWhereFieldPath:fieldPath arrayContains:value];
+      } else if ([operator isEqualToString:@"IN"]) {
+        query = [query queryWhereField:fieldPath in:value];
       }
     }
   }

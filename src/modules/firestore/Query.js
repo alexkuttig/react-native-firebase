@@ -36,6 +36,7 @@ const OPERATORS: { [QueryOperator]: string } = {
   '<': 'LESS_THAN',
   '<=': 'LESS_THAN_OR_EQUAL',
   'array-contains': 'ARRAY_CONTAINS',
+  'in': 'IN'
 };
 
 type NativeFieldPath = {|
