@@ -136,6 +136,7 @@ def supportVersion = rootProject.hasProperty('supportLibVersion') ? rootProject.
 dependencies {
   //noinspection GradleDynamicVersion
   api "com.facebook.react:react-native:+"
+  implementation "androidx.annotation:annotation:1.1.0"
 
   /* ----------------------------
    *    REACT NATIVE FIREBASE
@@ -151,7 +152,7 @@ dependencies {
    * ------------------------- */
 
   // Ads
-  compileOnly "com.google.firebase:firebase-ads:17.2.1" 
+  compileOnly "com.google.firebase:firebase-ads:17.2.1"
   // Authentication
   compileOnly "com.google.firebase:firebase-auth:17.0.0"
   // Analytics
@@ -170,7 +171,7 @@ dependencies {
   // Cloud Functions
   compileOnly "com.google.firebase:firebase-functions:17.0.0"
   // Cloud Firestore
-  compileOnly "com.google.firebase:firebase-firestore:19.0.2"
+  compileOnly "com.google.firebase:firebase-firestore:21.3.0"
   // Cloud Messaging / FCM
   compileOnly "com.google.firebase:firebase-messaging:18.0.0"
   // Crashlytics
